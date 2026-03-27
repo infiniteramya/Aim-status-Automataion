@@ -125,6 +125,11 @@ def on_startup():
     init_db()
 
 
+@app.head("/")
+async def health():
+    return HTMLResponse("")
+
+
 @app.get("/", response_class=HTMLResponse)
 async def index(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
