@@ -1,0 +1,13 @@
+__pycache__
+*.pyc
+.DS_Store
+.claude
+data/uploads/*
+data/results/*
+data/jobs.db
+Results.csv
+Results_backup.csv
+Test_Results.csv
+captcha.png
+*.csv
+!requirements.txt

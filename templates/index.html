@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIM ATL Document Checker</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <main class="container">
+        <header>
+            <h1>AIM ATL Document Checker</h1>
+            <p>Upload a CSV with school data, check ATL document submission status automatically.</p>
+        </header>
+
+        <!-- Upload Section -->
+        <section id="upload-section">
+            <div id="drop-zone" class="drop-zone">
+                <p>Drag & drop a CSV file here, or click to browse</p>
+                <input type="file" id="file-input" accept=".csv" hidden>
+            </div>
+
+            <div id="preview-section" hidden>
+                <h3>Preview: <span id="file-name"></span> (<span id="row-count"></span> schools)</h3>
+                <div class="table-wrap">
+                    <table id="preview-table" class="striped">
+                        <thead id="preview-head"></thead>
+                        <tbody id="preview-body"></tbody>
+                    </table>
+                </div>
+                <button id="start-btn" class="primary">Start Checking</button>
+            </div>
+        </section>
+
+        <!-- Progress Section -->
+        <section id="progress-section" hidden>
+            <h3>Processing...</h3>
+            <progress id="progress-bar" value="0" max="100"></progress>
+            <p id="progress-text">Initializing...</p>
+            <p id="current-school"></p>
+
+            <details open>
+                <summary>Live Log</summary>
+                <div id="log-container" class="log-container">
+                    <pre id="log-output"></pre>
+                </div>
+            </details>
+
+            <button id="stop-btn" class="secondary outline">Stop</button>
+        </section>
+
+        <!-- Results Section -->
+        <section id="results-section" hidden>
+            <h3>Results</h3>
+
+            <div id="summary-cards" class="grid">
+                <div class="card">
+                    <h4>Total</h4>
+                    <p id="sum-total" class="big-number">0</p>
+                </div>
+                <div class="card card-approved">
+                    <h4>Approved</h4>
+                    <p id="sum-approved" class="big-number">0</p>
+                </div>
+                <div class="card card-pending">
+                    <h4>Pending</h4>
+                    <p id="sum-pending" class="big-number">0</p>
+                </div>
+                <div class="card card-failed">
+                    <h4>Failed</h4>
+                    <p id="sum-failed" class="big-number">0</p>
+                </div>
+            </div>
+
+            <div class="table-wrap">
+                <table id="results-table" class="striped">
+                    <thead id="results-head"></thead>
+                    <tbody id="results-body"></tbody>
+                </table>
+            </div>
+
+            <div class="button-group">
+                <button id="download-btn" class="primary">Download CSV</button>
+                <button id="new-btn" class="secondary outline">New Check</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>

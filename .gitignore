@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.DS_Store
+data/uploads/
+data/results/
+data/jobs.db
+captcha.png
+Results.csv
+Results_backup.csv
+Test_Results.csv
+.claude/

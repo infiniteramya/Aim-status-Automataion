@@ -1,0 +1,85 @@
+/* Drop zone */
+.drop-zone {
+    border: 2px dashed var(--pico-muted-border-color);
+    border-radius: 8px;
+    padding: 3rem 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+}
+.drop-zone:hover,
+.drop-zone.drag-over {
+    border-color: var(--pico-primary);
+    background: var(--pico-primary-focus);
+}
+
+/* Table wrapper */
+.table-wrap {
+    overflow-x: auto;
+    margin-bottom: 1rem;
+}
+.table-wrap table {
+    font-size: 0.85rem;
+}
+
+/* Summary cards */
+.card {
+    text-align: center;
+    padding: 1rem;
+    border-radius: 8px;
+    background: var(--pico-card-background-color);
+    border: 1px solid var(--pico-muted-border-color);
+}
+.card h4 { margin-bottom: 0.25rem; }
+.big-number { font-size: 2rem; font-weight: 700; margin: 0; }
+
+.card-approved .big-number { color: #2e7d32; }
+.card-pending .big-number  { color: #f57f17; }
+.card-failed .big-number   { color: #c62828; }
+
+/* Status badges in results table */
+.status-approved { color: #2e7d32; font-weight: 600; }
+.status-pending  { color: #f57f17; font-weight: 600; }
+.status-failed   { color: #c62828; font-weight: 600; }
+
+/* Log container */
+.log-container {
+    max-height: 300px;
+    overflow-y: auto;
+    background: #1a1a2e;
+    color: #eee;
+    border-radius: 6px;
+    padding: 0.75rem;
+    font-size: 0.8rem;
+}
+.log-container pre {
+    margin: 0;
+    white-space: pre-wrap;
+    word-break: break-word;
+    color: inherit;
+    background: none;
+}
+
+/* Button group */
+.button-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Progress text */
+#progress-text {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+#current-school {
+    color: var(--pico-muted-color);
+    margin-top: 0;
+}
+
+/* Header */
+header {
+    margin-bottom: 2rem;
+}
+header h1 { margin-bottom: 0.25rem; }
+header p { color: var(--pico-muted-color); }
